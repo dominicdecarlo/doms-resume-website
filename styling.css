@@ -1,0 +1,207 @@
+/* General Body Styles */
+body {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    line-height: 1.8;
+}
+
+/* Header and Navigation */
+header {
+    background: rgba(26, 26, 26, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    border-bottom: 1px solid #444;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 25px;
+}
+
+nav ul li a {
+    color: #f0f0f0;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: background-color 0.4s, color 0.4s;
+}
+
+nav ul li a:hover, .cta-button:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 40px;
+    background: #222;
+}
+
+.hero-text {
+    max-width: 50%;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.hero-image img {
+    border-radius: 50%;
+    border: 5px solid #007bff;
+}
+
+/* Education Section */
+#education {
+    background: #1a1a1a;
+}
+
+.education-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.education-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+
+.course-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.course-card {
+    background: #2c2c2c;
+    padding: 15px 25px;
+    border-radius: 20px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.course-card:hover {
+    background-color: #007bff;
+}
+
+/* Projects Section */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: #2c2c2c;
+    border-radius: 15px;
+    overflow: hidden;
+    text-decoration: none;
+    color: #f0f0f0;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+.project-card img {
+    width: 100%;
+    display: block;
+}
+
+.project-card h3 {
+    padding: 20px;
+    margin: 0;
+    text-align: center;
+}
+
+/* Experience Section */
+.job-card {
+    background: #2c2c2c;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    transition: background-color 0.3s;
+}
+
+.job-card:hover {
+    background: #333;
+}
+
+.job-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.company-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+
+/* Skills Section */
+.skill-category {
+    margin-bottom: 30px;
+}
+
+.skill-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.skill-icons img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s;
+}
+
+.skill-icons img:hover {
+    transform: scale(1.2);
+}
+
+/* Portfolio Page */
+.project-detailed-card {
+    background: #2c2c2c;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
