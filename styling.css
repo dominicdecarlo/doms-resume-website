@@ -18,6 +18,26 @@ header {
     z-index: 1000;
 }
 
+/* Social icons in top nav */
+header nav { position: relative; }
+.nav-social {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.nav-social a { display: inline-flex; align-items: center; }
+.nav-social img {
+    width: 24px;
+    height: 24px;
+    opacity: 0.85;
+    transition: transform 0.2s, opacity 0.2s;
+}
+.nav-social img:hover { opacity: 1; transform: scale(1.15); }
+
 nav ul {
     list-style: none;
     display: flex;
@@ -179,23 +199,47 @@ nav ul li a:hover, .cta-button:hover {
 
 /* Skills Section */
 .skill-category {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .skill-icons {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 28px;
+    justify-content: center; /* center icons horizontally */
+    align-items: center;     /* center icons vertically within rows */
 }
 
 .skill-icons img {
-    width: 40px;
-    height: 40px;
+    width: 64px;
+    height: 64px;
     transition: transform 0.3s;
+    will-change: transform;
+    animation: pulse 2.4s ease-in-out infinite; /* pulse when NOT hovering */
+    animation-play-state: paused; /* start paused so we can sync start */
 }
 
 .skill-icons img:hover {
-    transform: scale(1.2);
+    animation: none;            /* stop pulsing on hover */
+    transform: scale(1.15);     /* subtle, controlled hover scale */
+}
+
+/* Center the entire skills section content */
+#skills { text-align: center; padding: 20px 0; }
+#skills .skill-category h3 { text-align: center; }
+
+/* Pulse animation for skills icons */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.12); }
+}
+
+/* When this class is added, all skills icons start animation in-sync */
+.icons-animate .skill-icons img { animation-play-state: running; }
+
+/* Slightly smaller icons on very small screens */
+@media (max-width: 480px) {
+    .skill-icons img { width: 52px; height: 52px; }
 }
 
 /* Portfolio Page */

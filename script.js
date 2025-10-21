@@ -19,6 +19,11 @@ window.addEventListener('resize', () => {
     window.__hdrSzT = setTimeout(syncHeaderCssVar, 100);
 });
 
+// Start skills icon animations in sync once DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('icons-animate');
+});
+
 // Header-aware smooth anchor scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
