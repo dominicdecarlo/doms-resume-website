@@ -20,6 +20,11 @@
     }
 
     function initSectionAnimations() {
+        // Refresh ScrollTrigger after everything loads
+        window.addEventListener('load', () => {
+            ScrollTrigger.refresh();
+        });
+
         // About Me header animation - Simple fade in
         const aboutHeader = document.querySelector('#about h2');
         if (aboutHeader) {
@@ -493,8 +498,23 @@
 
     // Initialize when DOM is ready
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initSectionAnimations);
+        document.addEventListener('DOMContentLoaded', () => {
+            // Small delay to ensure images load
+            setTimeout(() => {
+                initSectionAnimations();
+                ScrollTrigger.refresh();
+            }, 100);
+        });
     } else {
-        initSectionAnimations();
+        // Small delay to ensure images load
+        setTimeout(() => {
+            initSectionAnimations();
+            ScrollTrigger.refresh();
+        }, 100);
     }
+
+    // Refresh ScrollTrigger when images load
+    window.addEventListener('load', () => {
+        ScrollTrigger.refresh();
+    });
 })();
