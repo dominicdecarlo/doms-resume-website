@@ -7,6 +7,17 @@ body {
     line-height: 1.8;
 }
 
+/* Main sections padding */
+section {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+section#hero {
+    padding-left: 40px; /* Hero keeps its original padding */
+    padding-right: 40px;
+}
+
 /* Header and Navigation */
 header {
     background: rgba(26, 26, 26, 0.8);
@@ -69,21 +80,59 @@ nav ul li a:hover, .cta-button:hover {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 80px 40px;
+    padding: 0px 40px;
     background: #222;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+/* Animated particles background */
+.hero-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(2px);
+    opacity: 0.3;
 }
 
 .hero-text {
     max-width: 50%;
+    position: relative;
+    z-index: 2;
 }
 
-.hero-text h1 {
+/* Hero title styling with word spans */
+.hero-title {
     font-size: 3.5rem;
     color: #007bff;
     margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3em;
 }
 
-.hero-text p {
+.hero-title .word {
+    display: inline-block;
+    transform-origin: bottom;
+}
+
+.hero-title .word.glow {
+    color: #4a9eff;
+    font-weight: 900;
+}
+
+.hero-subtitle,
+.hero-description {
     font-size: 1.2rem;
     margin-bottom: 30px;
 }
@@ -96,6 +145,12 @@ nav ul li a:hover, .cta-button:hover {
     border-radius: 25px;
     font-weight: bold;
     transition: background-color 0.3s;
+    display: inline-block;
+}
+
+.hero-image {
+    position: relative;
+    z-index: 2;
 }
 
 .hero-image img {
@@ -116,7 +171,7 @@ nav ul li a:hover, .cta-button:hover {
 }
 
 .education-icon {
-    width: 100px;   /* more room for Pitt logo */
+    width: 90px;
     height: 100px;
     margin-right: 24px;
     border-radius: 10px;
@@ -141,9 +196,18 @@ nav ul li a:hover, .cta-button:hover {
     background-color: #007bff;
 }
 
-/* Center Education content except the header */
-#education > h2,
-#education > h3 { text-align: center; }
+/* Education layout: header left, content centered */
+.education-header {
+    text-align: left; /* Keep header aligned to the left */
+}
+
+#education > h2 {
+    text-align: left; /* Main Education header stays left */
+}
+
+#education > h3 {
+    text-align: center; /* "Relevant Coursework" centered */
+}
 
 /* Projects Section */
 .project-grid {
@@ -211,8 +275,10 @@ nav ul li a:hover, .cta-button:hover {
     align-items: start; /* ensure content sits right under the section header */
 }
 
-/* tighten space between header and content in About */
-#about h2 { margin-bottom: 14px; }
+/* About Me header - simple and clean */
+#about h2 { 
+    margin-bottom: 14px;
+}
 
 .about-text p { margin: 0 0 16px; }
 

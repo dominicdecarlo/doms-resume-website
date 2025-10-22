@@ -28,10 +28,17 @@
 
     <main>
         <section id="hero" class="hero">
+            <!-- Animated background particles -->
+            <div class="hero-particles" aria-hidden="true"></div>
+            
             <div class="hero-text">
-                <h1>Hello, I'm Dominic</h1>
-                <p>B.S. in Computer Science & Data Science @ Pitt</p>
-                <p>I design and build technologies that help people of all backgrounds harness the power of AI and Machine Learning.</p>
+                <h1 class="hero-title">
+                    <span class="word">Hello,</span>
+                    <span class="word">I'm</span>
+                    <span class="word glow">Dominic</span>
+                </h1>
+                <p class="hero-subtitle">B.S. in Computer Science & Data Science @ Pitt</p>
+                <p class="hero-description">I design and build technologies that help people of all backgrounds harness the power of AI and Machine Learning.</p>
                 <a href="contact.html" class="cta-button">Let's connect.</a>
             </div>
             <div class="hero-image">
@@ -192,6 +199,11 @@
 
     <footer></footer>
 
+    <!-- GSAP Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
+    <script src="hero-animation.js"></script>
+    <script src="section-animations.js"></script>
 </body>
 </html>
