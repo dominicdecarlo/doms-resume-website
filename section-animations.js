@@ -11,6 +11,14 @@
     // Register ScrollTrigger plugin
     gsap.registerPlugin(ScrollTrigger);
 
+    // Local helper to match header-aware snap offset
+    function headerOffset() {
+        const hdr = document.querySelector('header');
+        const h = hdr && hdr.offsetHeight ? hdr.offsetHeight : 0;
+        const SAFETY = 8; // keep in sync with script.js
+        return h + SAFETY;
+    }
+
     function initSectionAnimations() {
         // About Me header animation - Simple fade in
         const aboutHeader = document.querySelector('#about h2');
@@ -156,38 +164,40 @@
         const educationSection = document.querySelector('#education');
         const educationHeader = document.querySelector('#education h2');
         const educationHeaderDiv = document.querySelector('.education-header');
-        const courseworkHeading = document.querySelector('#education h3');
+        const courseworkSubheading = document.querySelector('.coursework-subheading');
         const courseCards = document.querySelectorAll('.course-card');
         
-        if (educationSection && educationHeader && courseworkHeading) {
+        if (educationSection) {
             // Set initial state - hidden
-            gsap.set(educationHeader, { opacity: 0, x: -100 });
+            if (educationHeader) gsap.set(educationHeader, { opacity: 0, x: -100 });
             if (educationHeaderDiv) gsap.set(educationHeaderDiv, { opacity: 0, x: -80 });
-            gsap.set(courseworkHeading, { opacity: 0, y: 20 });
-            if (courseCards.length > 0) gsap.set(courseCards, { opacity: 0, y: 30, scale: 0.9 });
+            if (courseworkSubheading) gsap.set(courseworkSubheading, { opacity: 0, scale: 0.5 });
+            if (courseCards && courseCards.length) gsap.set(courseCards, { opacity: 0, y: 30, scale: 0.9 });
 
             // Create ScrollTrigger that fires when section is at top (snap scroll position)
             ScrollTrigger.create({
                 trigger: educationSection,
-                start: 'top top+=100', // When section reaches near the top
+                start: () => `top top+=${headerOffset()}`,
                 onEnter: () => {
                     // Animate main header
-                    gsap.to(educationHeader, {
-                        opacity: 1,
-                        x: 0,
-                        duration: 1,
-                        ease: 'power3.out'
-                    });
+                    if (educationHeader) {
+                        gsap.to(educationHeader, {
+                            opacity: 1,
+                            x: 0,
+                            duration: 1,
+                            ease: 'power3.out'
+                        });
 
-                    // Add pulsing glow effect to header
-                    gsap.to(educationHeader, {
-                        textShadow: '0 0 20px rgba(0, 123, 255, 0.6)',
-                        duration: 0.8,
-                        delay: 0.5,
-                        yoyo: true,
-                        repeat: 1,
-                        ease: 'sine.inOut'
-                    });
+                        // Add pulsing glow effect to header
+                        gsap.to(educationHeader, {
+                            textShadow: '0 0 20px rgba(0, 123, 255, 0.6)',
+                            duration: 0.8,
+                            delay: 0.5,
+                            yoyo: true,
+                            repeat: 1,
+                            ease: 'sine.inOut'
+                        });
+                    }
 
                     // Animate education header content (logo + text)
                     if (educationHeaderDiv) {
@@ -200,17 +210,19 @@
                         });
                     }
 
-                    // Animate "Relevant Coursework" subheading
-                    gsap.to(courseworkHeading, {
-                        opacity: 1,
-                        y: 0,
-                        duration: 0.8,
-                        ease: 'power2.out',
-                        delay: 0.6
-                    });
+                    // Animate "Relevant Coursework" subheading with zoom effect
+                    if (courseworkSubheading) {
+                        gsap.to(courseworkSubheading, {
+                            opacity: 1,
+                            scale: 1,
+                            duration: 0.8,
+                            ease: 'back.out(1.7)',
+                            delay: 0.4
+                        });
+                    }
 
                     // Animate course cards with stagger
-                    if (courseCards.length > 0) {
+                    if (courseCards && courseCards.length) {
                         gsap.to(courseCards, {
                             opacity: 1,
                             y: 0,
@@ -218,7 +230,7 @@
                             duration: 0.6,
                             stagger: 0.08,
                             ease: 'back.out(1.5)',
-                            delay: 0.8
+                            delay: 0.5
                         });
                     }
                 },
@@ -239,7 +251,7 @@
             // Create ScrollTrigger that fires when section is at top (snap scroll position)
             ScrollTrigger.create({
                 trigger: experienceSection,
-                start: 'top top+=100', // When section reaches near the top
+                start: () => `top top+=${headerOffset()}`,
                 onEnter: () => {
                     // Animate Experience header
                     gsap.to(experienceHeader, {
@@ -406,21 +418,20 @@
         }
 
         // PROJECTS SECTION ANIMATIONS
-        const projectsHeader = document.querySelector('#projects h2');
-        const projectSection = document.querySelector('#projects');
-        const projectCards = document.querySelectorAll('.project-card');
-        const projectsCTA = document.querySelector('#projects .cta-button');
+    const projectsHeader = document.querySelector('#projects h2');
+    const projectSection = document.querySelector('#projects');
+    const projectsCTA = document.querySelector('#projects .projects-cta');
         
         if (projectsHeader && projectSection) {
             // Set initial state - hidden
             gsap.set(projectsHeader, { opacity: 0, scale: 0.8 });
-            if (projectCards.length > 0) gsap.set(projectCards, { opacity: 0, scale: 0.7 });
-            if (projectsCTA) gsap.set(projectsCTA, { opacity: 0, scale: 0 });
+            gsap.set('.project-card', { opacity: 0, scale: 0.7 });
+            if (projectsCTA) gsap.set(projectsCTA, { opacity: 0, scale: 0.6 });
 
             // Create ScrollTrigger that fires when section is at top (snap scroll position)
             ScrollTrigger.create({
                 trigger: projectSection,
-                start: 'top top+=100', // When section reaches near the top
+                start: () => `top top+=${headerOffset()}`,
                 onEnter: () => {
                     // Animate header
                     gsap.to(projectsHeader, {
@@ -431,25 +442,23 @@
                     });
 
                     // Animate project cards with zoom and stagger
-                    if (projectCards.length > 0) {
-                        gsap.to(projectCards, {
-                            opacity: 1,
-                            scale: 1,
-                            duration: 0.8,
-                            stagger: 0.15,
-                            ease: 'back.out(1.7)',
-                            delay: 0.3
-                        });
-                    }
+                    gsap.to('.project-card', {
+                        opacity: 1,
+                        scale: 1,
+                        duration: 0.8,
+                        stagger: 0.15,
+                        ease: 'back.out(1.7)',
+                        delay: 0.3
+                    });
 
-                    // Animate CTA button
+                    // Animate the 'View All Projects' CTA with a zoom-in
                     if (projectsCTA) {
                         gsap.to(projectsCTA, {
                             opacity: 1,
                             scale: 1,
                             duration: 0.6,
-                            ease: 'elastic.out(1, 0.5)',
-                            delay: 1.5
+                            ease: 'back.out(1.7)',
+                            delay: 0.9
                         });
                     }
                 },
@@ -457,29 +466,28 @@
             });
 
             // Add hover effects for project cards
-            if (projectCards.length > 0) {
-                projectCards.forEach(card => {
-                    card.addEventListener('mouseenter', () => {
-                        gsap.to(card, {
-                            scale: 1.05,
-                            y: -15,
-                            boxShadow: '0 20px 40px rgba(0, 123, 255, 0.3)',
-                            duration: 0.3,
-                            ease: 'power2.out'
-                        });
-                    });
-
-                    card.addEventListener('mouseleave', () => {
-                        gsap.to(card, {
-                            scale: 1,
-                            y: 0,
-                            boxShadow: '0 15px 25px rgba(0, 0, 0, 0.3)',
-                            duration: 0.3,
-                            ease: 'power2.out'
-                        });
+            const projectCards = document.querySelectorAll('.project-card');
+            projectCards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    gsap.to(card, {
+                        scale: 1.05,
+                        y: -15,
+                        boxShadow: '0 20px 40px rgba(0, 123, 255, 0.3)',
+                        duration: 0.3,
+                        ease: 'power2.out'
                     });
                 });
-            }
+
+                card.addEventListener('mouseleave', () => {
+                    gsap.to(card, {
+                        scale: 1,
+                        y: 0,
+                        boxShadow: '0 15px 25px rgba(0, 0, 0, 0.3)',
+                        duration: 0.3,
+                        ease: 'power2.out'
+                    });
+                });
+            });
         }
     }
 

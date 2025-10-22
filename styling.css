@@ -205,8 +205,11 @@ nav ul li a:hover, .cta-button:hover {
     text-align: left; /* Main Education header stays left */
 }
 
-#education > h3 {
-    text-align: center; /* "Relevant Coursework" centered */
+.coursework-subheading {
+    text-align: center;
+    color: #f0f0f0;
+    font-size: 1.8rem;
+    margin: 40px 0 30px;
 }
 
 /* Projects Section */
@@ -239,6 +242,30 @@ nav ul li a:hover, .cta-button:hover {
     padding: 20px;
     margin: 0;
     text-align: center;
+}
+
+/* Projects CTA */
+.projects-cta-wrap {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.projects-cta {
+    display: inline-block;
+    padding: 14px 28px;
+    border: 2px solid #007bff;
+    color: #f0f0f0;
+    text-decoration: none;
+    border-radius: 25px;
+    background: transparent;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.projects-cta:hover {
+    background-color: #007bff;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 123, 255, 0.25);
 }
 
 /* Experience Section */
