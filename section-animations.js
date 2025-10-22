@@ -491,31 +491,40 @@
         }
     }
 
-    // Initialize after everything is fully loaded
-    window.addEventListener('load', () => {
-        // Wait for images and fonts to fully render
-        setTimeout(() => {
-            initSectionAnimations();
-            
-            // Force ScrollTrigger to recalculate all positions
-            ScrollTrigger.refresh(true);
-            
-            // Additional refresh after a short delay for safety
-            setTimeout(() => {
-                ScrollTrigger.refresh(true);
-            }, 500);
-        }, 250);
-    });
-
-    // Backup initialization if load event already fired
-    if (document.readyState === 'complete') {
-        setTimeout(() => {
-            initSectionAnimations();
-            ScrollTrigger.refresh(true);
-            
-            setTimeout(() => {
-                ScrollTrigger.refresh(true);
-            }, 500);
-        }, 250);
+    // Wait for all images to load before initializing
+    function waitForImages() {
+        const images = document.querySelectorAll('img');
+        const promises = Array.from(images).map(img => {
+            return new Promise((resolve) => {
+                if (img.complete) {
+                    resolve();
+                } else {
+                    img.addEventListener('load', resolve);
+                    img.addEventListener('error', resolve); // Resolve even on error
+                }
+            });
+        });
+        return Promise.all(promises);
     }
+
+    // Initialize when DOM is ready and images are loaded
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', async () => {
+            await waitForImages();
+            initSectionAnimations();
+            // Refresh ScrollTrigger after a short delay
+            setTimeout(() => ScrollTrigger.refresh(), 200);
+        });
+    } else {
+        waitForImages().then(() => {
+            initSectionAnimations();
+            // Refresh ScrollTrigger after a short delay
+            setTimeout(() => ScrollTrigger.refresh(), 200);
+        });
+    }
+
+    // Final refresh on window load as backup
+    window.addEventListener('load', () => {
+        setTimeout(() => ScrollTrigger.refresh(), 300);
+    });
 })();

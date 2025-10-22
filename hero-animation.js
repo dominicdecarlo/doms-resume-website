@@ -148,9 +148,17 @@
         document.addEventListener('DOMContentLoaded', () => {
             createParticles();
             animateHeroEntrance();
+            // Refresh ScrollTrigger after hero animation completes
+            if (typeof ScrollTrigger !== 'undefined') {
+                setTimeout(() => ScrollTrigger.refresh(), 2000);
+            }
         });
     } else {
         createParticles();
         animateHeroEntrance();
+        // Refresh ScrollTrigger after hero animation completes
+        if (typeof ScrollTrigger !== 'undefined') {
+            setTimeout(() => ScrollTrigger.refresh(), 2000);
+        }
     }
 })();
