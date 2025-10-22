@@ -20,11 +20,6 @@
     }
 
     function initSectionAnimations() {
-        // Refresh ScrollTrigger after everything loads
-        window.addEventListener('load', () => {
-            ScrollTrigger.refresh();
-        });
-
         // About Me header animation - Simple fade in
         const aboutHeader = document.querySelector('#about h2');
         if (aboutHeader) {
@@ -496,25 +491,31 @@
         }
     }
 
-    // Initialize when DOM is ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', () => {
-            // Small delay to ensure images load
-            setTimeout(() => {
-                initSectionAnimations();
-                ScrollTrigger.refresh();
-            }, 100);
-        });
-    } else {
-        // Small delay to ensure images load
+    // Initialize after everything is fully loaded
+    window.addEventListener('load', () => {
+        // Wait for images and fonts to fully render
         setTimeout(() => {
             initSectionAnimations();
-            ScrollTrigger.refresh();
-        }, 100);
-    }
-
-    // Refresh ScrollTrigger when images load
-    window.addEventListener('load', () => {
-        ScrollTrigger.refresh();
+            
+            // Force ScrollTrigger to recalculate all positions
+            ScrollTrigger.refresh(true);
+            
+            // Additional refresh after a short delay for safety
+            setTimeout(() => {
+                ScrollTrigger.refresh(true);
+            }, 500);
+        }, 250);
     });
+
+    // Backup initialization if load event already fired
+    if (document.readyState === 'complete') {
+        setTimeout(() => {
+            initSectionAnimations();
+            ScrollTrigger.refresh(true);
+            
+            setTimeout(() => {
+                ScrollTrigger.refresh(true);
+            }, 500);
+        }, 250);
+    }
 })();
