@@ -431,7 +431,7 @@
             // Create ScrollTrigger that fires when section is at top (snap scroll position)
             ScrollTrigger.create({
                 trigger: projectSection,
-                start: () => `top top+=${headerOffset()}`,
+                start: () => `top 60%`,
                 onEnter: () => {
                     // Animate header
                     gsap.to(projectsHeader, {
