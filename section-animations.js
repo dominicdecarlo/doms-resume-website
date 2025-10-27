@@ -177,7 +177,7 @@
             // Create ScrollTrigger that fires when section is at top (snap scroll position)
             ScrollTrigger.create({
                 trigger: educationSection,
-                start: () => `top top+=${headerOffset()}`,
+                start: () => `top 60%`,
                 onEnter: () => {
                     // Animate main header
                     if (educationHeader) {
@@ -251,7 +251,7 @@
             // Create ScrollTrigger that fires when section is at top (snap scroll position)
             ScrollTrigger.create({
                 trigger: experienceSection,
-                start: () => `top top+=${headerOffset()}`,
+                start: () => `top 60%`,
                 onEnter: () => {
                     // Animate Experience header
                     gsap.to(experienceHeader, {
