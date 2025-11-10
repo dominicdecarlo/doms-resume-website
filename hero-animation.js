@@ -13,7 +13,9 @@
         const particlesContainer = document.querySelector('.hero-particles');
         if (!particlesContainer) return;
 
-        const particleCount = 25;
+        // Reduce particle count on mobile for better performance
+        const isMobile = window.innerWidth <= 768;
+        const particleCount = isMobile ? 12 : 25;
         const colors = ['#007bff', '#0056b3', '#4a9eff', '#6ab7ff'];
 
         for (let i = 0; i < particleCount; i++) {
