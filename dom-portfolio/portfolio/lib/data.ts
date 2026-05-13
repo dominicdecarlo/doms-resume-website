@@ -247,3 +247,8 @@ export const skillsFlat: Skill[] = skillCategories.flatMap((c) => c.items);
 const half = Math.ceil(skillsFlat.length / 2);
 export const skillsRowA: Skill[] = skillsFlat.slice(0, half);
 export const skillsRowB: Skill[] = skillsFlat.slice(half);
+
+// Object for resume page: { category: [skill names] }
+export const skills = Object.fromEntries(
+  skillCategories.map((cat) => [cat.title, cat.items.map((item) => item.name)])
+);
