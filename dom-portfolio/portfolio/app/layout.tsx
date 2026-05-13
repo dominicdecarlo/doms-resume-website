@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Nav } from "@/components/nav";
 import { Cursor } from "@/components/cursor";
-import { SmoothScroll } from "@/components/smooth-scroll";
 import ThemeProvider from "@/components/theme-provider";
 
 export const metadata: Metadata = {
@@ -38,7 +37,6 @@ export default function RootLayout({
       </head>
       <body>
         <ThemeProvider>
-          <SmoothScroll />
           <div className="grain" />
           <Cursor />
           <Nav />
