@@ -76,7 +76,9 @@ export function Hero() {
           </motion.p>
         </div>
 
-        <PhotoCard />
+        <div className="w-full max-w-[280px] md:max-w-[340px] ml-auto">
+          <PhotoCard />
+        </div>
       </motion.div>
 
       <motion.div
@@ -143,7 +145,7 @@ function PhotoCard() {
         }deg) rotateY(${tilt.x * 6}deg) rotateX(${-tilt.y * 6}deg)`,
         transition: "transform 0.4s ease",
       }}
-      className="relative aspect-[4/5] border border-line overflow-hidden bg-gradient-to-b from-bg-2 to-bg"
+      className="relative aspect-[4/5] border border-line rounded-lg overflow-hidden bg-gradient-to-b from-bg-2 to-bg"
       data-cursor="hover"
     >
       <Image
