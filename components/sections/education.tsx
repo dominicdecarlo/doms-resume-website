@@ -114,13 +114,11 @@ export function Education() {
             Relevant coursework — 12 / 12
           </p>
 
-          <div className="flex flex-wrap gap-2 md:gap-3">
-            <StaggerReveal stagger={0.04}>
-              {education.coursework.map((course) => (
-                <CourseChip key={course} label={course} />
-              ))}
-            </StaggerReveal>
-          </div>
+          <StaggerReveal stagger={0.04} className="flex flex-wrap gap-2 md:gap-3">
+            {education.coursework.map((course) => (
+              <CourseChip key={course} label={course} />
+            ))}
+          </StaggerReveal>
         </div>
       </div>
     </section>
@@ -198,7 +196,7 @@ function CourseChip({ label }: { label: string }) {
   return (
     <motion.span
       whileHover={{ y: -2 }}
-      className="group relative px-4 py-2 border border-line text-sm font-mono text-fg-dim hover:text-fg transition-colors duration-300 cursor-default overflow-hidden"
+      className="group relative inline-flex items-center px-4 py-2 border border-line text-sm font-mono text-fg-dim hover:text-fg transition-colors duration-300 cursor-default overflow-hidden"
     >
       {/* Pitt blue/gold sweep on hover */}
       <span
