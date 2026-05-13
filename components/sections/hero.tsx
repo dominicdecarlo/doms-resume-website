@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef, useState } from "react";
+import Image from "next/image";
 
 export function Hero() {
   const ref = useRef<HTMLDivElement>(null);
@@ -75,7 +76,13 @@ export function Hero() {
           </motion.p>
         </div>
 
-        <PhotoCard />
+        <Image
+  src="/dom.jpg"
+  alt="Dominic DeCarlo"
+  fill
+  className="object-cover"
+  priority
+/>
       </motion.div>
 
       <motion.div
