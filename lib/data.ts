@@ -12,7 +12,7 @@ export const profile = {
     github: "https://github.com/dominicdecarlo",
     site: "https://dominicdecarlo.vercel.app",
   },
-  status: "Open to Summer 2027 internships",
+  status: "Open to Summer 2027 entry level roles",
 };
 
 export const education = {
@@ -63,7 +63,7 @@ export const projects: Project[] = [
     date: "04 / 2026",
     dateLong: "April 2026",
     github: "https://github.com/dominicdecarlo", // ← replace with actual repo
-    // site: "https://your-llm-demo.vercel.app", // ← add when live
+    site: "https://titoai.vercel.app/", // ← add when live
   },
   {
     num: "02",
@@ -77,7 +77,7 @@ export const projects: Project[] = [
     date: "02 / 2026",
     dateLong: "February 2026",
     github: "https://github.com/dominicdecarlo", // ← replace with actual repo
-    // site: "https://your-arb-saas.vercel.app", // ← add when live
+    site: "https://snype.onrender.com/", // ← add when live
   },
   {
     num: "03",
@@ -91,7 +91,7 @@ export const projects: Project[] = [
     date: "09 / 2025",
     dateLong: "September 2025",
     github: "https://github.com/dominicdecarlo", // ← replace with actual repo
-    // site: "https://your-resume-builder.vercel.app", // ← add when live
+    site: "https://studio--studio-5267126809-b917a.us-central1.hosted.app/", // ← add when live
   },
   {
     num: "04",
@@ -104,7 +104,7 @@ export const projects: Project[] = [
     tags: ["Python", "NumPy", "Sci-Kit Learn", "Pandas"],
     date: "10 / 2024",
     dateLong: "October 2024",
-    github: "https://github.com/dominicdecarlo", // ← replace with actual repo
+    github: "https://github.com/dominicdecarlo/collegerealestate", // ← replace with actual repo
   },
   {
     num: "05",
@@ -119,6 +119,36 @@ export const projects: Project[] = [
     date: "07 / 2024",
     dateLong: "July 2024",
     github: "https://github.com/dominicdecarlo", // ← replace with actual repo
+  },
+
+  {
+    num: "06",
+    title: "AI Affirmations Generator",
+    blurb: "Generates personalized affirmations using AI.",
+    details: [
+      "Built a web application that generates personalized affirmations using AI.",
+      "Implemented a design-focused, user-friendly interface for users to provide input via chatbox and receive tailored affirmations.",
+    ],
+    tags: ["TypeScript", "Next.js", "Tailwind", "Gemini"],
+    date: "11 / 2024",
+    dateLong: "November 2024",
+    github: "https://github.com/dominicdecarlo/aiaffirmations", // ← replace with actual repo
+    site: "https://aiaffirmations.vercel.app/", // ← add when live
+  },
+
+  {
+    num: "07",
+    title: "Live Translator",
+    blurb: "Real-time speech translation across languages.",
+    details: [
+      "Built a real-time web app that translates live speech across languages using Flask and speech recognition.",
+      "Integrated speech recognition to capture spoken words and Google Translate API for multilingual translation.",
+    ],
+    tags: ["Flask", "Python", "Speech Recognition", "Google Translate"],
+    date: "9 /2024",
+    dateLong: "September 2024",
+    github: "https://github.com/dominicdecarlo/Live-Translator",
+    site: "https://devpost.com/software/live-translator-4rfsj5",
   },
 ];
 

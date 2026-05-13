@@ -6,7 +6,7 @@ import { SectionLabel, DisplayHeading } from "../section-bits";
 const stats = [
   { num: "3.6", label: "GPA", desc: "Computer Science & Data Science." },
   {
-    num: "5+",
+    num: "10+",
     label: "Shipped projects",
     desc: "From custom LLMs to live SaaS dashboards.",
   },
@@ -15,7 +15,7 @@ const stats = [
     label: "Internships",
     desc: "Thermo Fisher & National Philanthropic Trust.",
   },
-  { num: "9", label: "Languages", desc: "Python, TS, Java, C/C++, MIPS & more." },
+  { num: "10+", label: "Languages", desc: "Python, Java, C/C++, JS/TS & more." },
 ];
 
 export function About() {
@@ -38,17 +38,15 @@ export function About() {
             <em className="italic text-accent">University of Pittsburgh</em>{" "}
             studying Computer Science and Data Science. I work on
             machine-learning systems that range from transformer LLMs trained
-            on H100 clusters to computer-vision pipelines and predictive
+            to soccer computer-vision pipelines and predictive
             analytics for real businesses.
           </p>
         </Reveal>
 
         <Reveal delay={0.1}>
           <p className="text-fg-dim leading-[1.7] text-[1.05rem]">
-            Outside the terminal you&rsquo;ll find me reading equity research,
-            watching matches, or trying to make spreadsheets behave. I care
-            about thoughtful design, well-named variables, and code you can
-            read without coffee.
+            Outside the terminal you&rsquo;ll find me playing/watching sports (especially soccer),
+            hanging out with friends, working out, or watching movies. I also love cooking, traveling, music, and my dog 😊.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-10 mt-12 pt-12 border-t border-line">
             {stats.map((s) => (
