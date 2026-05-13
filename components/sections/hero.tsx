@@ -76,9 +76,13 @@ export function Hero() {
           </motion.p>
         </div>
 
-        <div className="w-full max-w-[280px] md:max-w-[340px] ml-auto">
-          <PhotoCard />
-        </div>
+        <Image
+  src="/dom.jpg"
+  alt="Dominic DeCarlo"
+  fill
+  className="object-cover"
+  priority
+/>
       </motion.div>
 
       <motion.div
@@ -145,16 +149,37 @@ function PhotoCard() {
         }deg) rotateY(${tilt.x * 6}deg) rotateX(${-tilt.y * 6}deg)`,
         transition: "transform 0.4s ease",
       }}
-      className="relative aspect-[4/5] border border-line rounded-lg overflow-hidden bg-gradient-to-b from-bg-2 to-bg"
+      className="relative aspect-[4/5] border border-line overflow-hidden bg-gradient-to-b from-bg-2 to-bg"
       data-cursor="hover"
     >
-      <Image
-        src="/dom.jpg"
-        alt="Dominic DeCarlo"
-        fill
-        className="object-cover"
-        priority
-      />
+      {<Image
+  src="/dom.jpg"
+  alt="Dominic DeCarlo"
+  fill
+  className="object-cover"
+  priority
+/>}
+      <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 text-muted font-mono text-[0.7rem] uppercase tracking-[0.2em] text-center p-8">
+        <svg
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          viewBox="0 0 24 24"
+          className="w-12 h-12 text-accent opacity-60"
+        >
+          <circle cx="12" cy="8" r="4" />
+          <path d="M4 21c0-4.418 3.582-8 8-8s8 3.582 8 8" />
+        </svg>
+        <span>
+          Photo
+          <br />
+          placeholder
+        </span>
+        <span className="opacity-60">
+          drop image at <br />
+          /public/dom.jpg
+        </span>
+      </div>
 
       {/* gradient overlay */}
       <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-transparent to-bg/60" />
