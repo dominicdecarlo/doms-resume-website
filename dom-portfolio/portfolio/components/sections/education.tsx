@@ -114,13 +114,13 @@ export function Education() {
             Relevant coursework — 12 / 12
           </p>
 
-          <StaggerReveal stagger={0.04}>
-            <div className="flex flex-wrap gap-2 md:gap-3">
+          <div className="flex flex-wrap gap-2 md:gap-3">
+            <StaggerReveal stagger={0.04}>
               {education.coursework.map((course) => (
                 <CourseChip key={course} label={course} />
               ))}
-            </div>
-          </StaggerReveal>
+            </StaggerReveal>
+          </div>
         </div>
       </div>
     </section>
