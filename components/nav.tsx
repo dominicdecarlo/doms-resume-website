@@ -35,7 +35,7 @@ export function Nav() {
           href="/"
           className="font-serif italic text-2xl tracking-tight text-fg"
         >
-          Dom<span className="text-accent">.</span>
+          Dominic DeCarlo<span className="text-accent">.</span>
         </Link>
 
         <div className="flex items-center gap-6 md:gap-10">
