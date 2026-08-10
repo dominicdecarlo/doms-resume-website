@@ -63,10 +63,26 @@ export const projects: Project[] = [
     date: "04 / 2026",
     dateLong: "April 2026",
     github: "https://github.com/dominicdecarlo", // ← replace with actual repo
-    site: "https://titoai.vercel.app/", // ← add when live
+    site: "https://titoai.vercel.app/",
   },
+
   {
     num: "02",
+    title: "Fine-Tuned Local AI Coding & Voice Assistant",
+    blurb: "Fine-tuned 9B Coding Assistant with Local voice agent for hands-free use.",
+    details: [
+      "Fine-tuned a 9B parameter LLM via QLoRA to optimize code generation and reasoning, surpassing the larger Qwen 3.5 27B model on 7 standard coding benchmarks.",
+      "Deployed a fast, local voice agent using STT & TTS pipelines with an LM Studio backend for live hands-free use."
+    ],
+    tags: ["PyTorch", "Unsloth", "QLoRA"],
+    date: "08 / 2026",
+    dateLong: "August 2026",
+    github: "https://github.com/dominicdecarlo", // ← replace with actual repo
+    // site: "", // ← add when live
+  },
+
+  {
+    num: "03",
     title: "Real-Time Prediction Market Arbitrage SaaS",
     blurb: "Live arbitrage scanner across Kalshi & Polymarket.",
     details: [
@@ -77,10 +93,10 @@ export const projects: Project[] = [
     date: "02 / 2026",
     dateLong: "February 2026",
     github: "https://github.com/dominicdecarlo", // ← replace with actual repo
-    site: "https://snype.onrender.com/", // ← add when live
+    site: "https://snype.onrender.com/",
   },
   {
-    num: "03",
+    num: "04",
     title: "AI Resume Builder for Veterans",
     blurb: "Translates military roles into job-ready resumes.",
     details: [
@@ -91,10 +107,10 @@ export const projects: Project[] = [
     date: "09 / 2025",
     dateLong: "September 2025",
     github: "https://github.com/dominicdecarlo", // ← replace with actual repo
-    site: "https://studio--studio-5267126809-b917a.us-central1.hosted.app/", // ← add when live
+    site: "https://studio--studio-5267126809-b917a.us-central1.hosted.app/",
   },
   {
-    num: "04",
+    num: "05",
     title: "College Real Estate Predictor",
     blurb: "ML model beating Zillow estimates for student rentals.",
     details: [
@@ -107,7 +123,7 @@ export const projects: Project[] = [
     github: "https://github.com/dominicdecarlo/collegerealestate", // ← replace with actual repo
   },
   {
-    num: "05",
+    num: "06",
     title: "AI Soccer Analysis System",
     blurb: "Computer vision pipeline for match analysis.",
     details: [
@@ -122,7 +138,7 @@ export const projects: Project[] = [
   },
 
   {
-    num: "06",
+    num: "07",
     title: "AI Affirmations Generator",
     blurb: "Generates personalized affirmations using AI.",
     details: [
@@ -137,7 +153,7 @@ export const projects: Project[] = [
   },
 
   {
-    num: "07",
+    num: "08",
     title: "Live Translator",
     blurb: "Real-time speech translation across languages.",
     details: [
@@ -232,10 +248,12 @@ export const skillCategories: { title: string; items: Skill[] }[] = [
       { name: "Java", icon: "/img/skills/java.png" },
       { name: "C", icon: "/img/skills/C.png" },
       { name: "C++", icon: "/img/skills/c++.png" },
+      { name: "Go", icon: "/img/skills/go.png" },
       { name: "SQL", icon: "/img/skills/SQL.png" },
       { name: "R", icon: "/img/skills/R.png" },
       { name: "HTML", icon: "/img/skills/html.png" },
       { name: "CSS", icon: "/img/skills/css.png" },
+      { name: "Bash", icon: "/img/skills/bash.webp" },
       { name: "MIPS Assembly", icon: "/img/skills/asm.png" },
     ],
   },
@@ -263,6 +281,7 @@ export const skillCategories: { title: string; items: Skill[] }[] = [
       { name: "GitHub", icon: "/img/skills/github.png" },
       { name: "Git", icon: "/img/skills/git.png" },
       { name: "Jira", icon: "/img/skills/jira.png" },
+      { name: "n8n", icon: "/img/skills/n8n.webp" },
       { name: "Power BI", icon: "/img/skills/powerbi.png" },
       { name: "VS Code", icon: "/img/skills/vsc.png" },
       { name: "Excel", icon: "/img/skills/excel.webp" },
