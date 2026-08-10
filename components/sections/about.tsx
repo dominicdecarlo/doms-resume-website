@@ -26,15 +26,15 @@ export function About() {
     >
       <SectionLabel index="01">ABOUT ME</SectionLabel>
       <DisplayHeading>
-        A student of <em className="italic text-accent">systems</em>,
+        I'm passionate about <em className="italic text-accent">AI/ML</em>,
         <br />
-        numbers, and quiet craft.
+        numbers, and building.
       </DisplayHeading>
 
       <div className="grid md:grid-cols-2 gap-8 md:gap-16">
         <Reveal>
           <p className="font-serif text-[clamp(1.4rem,2.4vw,2.1rem)] leading-[1.3] max-w-[60ch]">
-            I&rsquo;m a junior at the{" "}
+            I&rsquo;m a senior at the{" "}
             <em className="italic text-accent">University of Pittsburgh</em>{" "}
             studying Computer Science and Data Science. I work on
             machine-learning systems that range from transformer LLMs trained
