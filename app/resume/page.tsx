@@ -56,7 +56,7 @@ export default function ResumePage() {
               GitHub ↗
             </a>
             <a
-              href="/Dom_Resume.pdf"
+              href="/Dom's_Resume.pdf"
               target="_blank"
               rel="noreferrer"
               className="text-accent hover:opacity-70"

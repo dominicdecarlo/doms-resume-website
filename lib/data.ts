@@ -167,10 +167,10 @@ export const experience: Experience[] = [
     roleHighlight: "AI & Automation",
     company: "Thermo Fisher Scientific",
     location: "Pittsburgh, PA",
-    dates: "May 2026 — Aug 2026",
+    dates: "May 2026 — Dec 2026",
     points: [
-      "Designing and deploying automated machine-learning pipelines using Python to streamline complex data processing workflows and improve operational efficiency.",
-      "Leveraging predictive modeling and advanced AI frameworks to optimize internal enterprise systems and support data-driven decision-making.",
+      "Engineered an ensemble ML model predicting customer experience scores and root-cause risk factors for IT incident tickets, saving managers 98% of manual triage time and projecting ~$110k in operational savings.",
+      "Assessed frontier model vulnerabilities and developed AI security frameworks to enable the safe deployment of high-performing LLMs.",
     ],
   },
   {
