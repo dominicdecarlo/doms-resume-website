@@ -7,7 +7,7 @@ import ThemeProvider from "@/components/theme-provider";
 export const metadata: Metadata = {
   title: "Dominic DeCarlo — CS & Data Science",
   description:
-    "Computer Science & Data Science student at the University of Pittsburgh. Building at the intersection of AI, design, and quiet ambition.",
+    "Computer Science & Data Science student at the University of Pittsburgh. Building at the intersection of AI, ML, and development.",
   metadataBase: new URL("https://dominicdecarlo.vercel.app"),
 };
 
