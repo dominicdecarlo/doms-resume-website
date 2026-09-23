@@ -23,18 +23,19 @@ export const education = {
   gpa: "3.6",
   gpaMax: "4.00",
   coursework: [
-    "Data Structures & Algorithms",
+    "Data Structures & Algorithms 1 & 2",
     "Intro to AI",
     "Machine Learning",
     "Software Engineering",
     "Data Science",
     "Systems Software",
     "Discrete Math",
-    "Calculus",
+    "Calculus 1 & 2",
     "Linear Algebra",
     "Formal Methods",
     "Statistics",
     "Probability",
+    "Optimization"
   ],
 };
 
