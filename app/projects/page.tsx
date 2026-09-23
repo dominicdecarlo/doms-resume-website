@@ -38,8 +38,9 @@ export default function ProjectsPage() {
           "Computer Vision",
           "Full-Stack",
           "Data Science",
-          "SaaS",
+          "NLP",
           "Predictive Modeling",
+          "Forecasting"
         ]}
       />
 

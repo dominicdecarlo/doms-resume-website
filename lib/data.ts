@@ -68,6 +68,21 @@ export const projects: Project[] = [
 
   {
     num: "02",
+    title: "VIGIL (First Place, Steelhacks XIII)",
+    blurb: "AI Video Security Platform with Real-Time Threat Detection and Alerting.",
+    details: [
+      "Engineered an automated surveillance system leveraging custom trained video encoders for rapid anomaly screening paired with multimodal VLMs to analyze incidents across continuous CCTV footage in real time.",
+      "Developed a full-stack operator workspace featuring automated risk scoring, timestamped incident timelines, and multi-channel audio dispatch via speech synthesis APIs."
+    ],
+    tags: ["Next.js", "LoRA", "Multimodal AI"],
+    date: "09 / 2026",
+    dateLong: "September 2026",
+    github: "https://github.com/dominicdecarlo/vigil",
+    site: "https://devpost.com/software/vigil-4m7px2",
+  },
+
+  {
+    num: "03",
     title: "Fine-Tuned Local AI Coding & Voice Assistant",
     blurb: "Fine-tuned 9B Coding Assistant with Local voice agent for hands-free use.",
     details: [
@@ -82,7 +97,7 @@ export const projects: Project[] = [
   },
 
   {
-    num: "03",
+    num: "04",
     title: "Real-Time Prediction Market Arbitrage SaaS",
     blurb: "Live arbitrage scanner across Kalshi & Polymarket.",
     details: [
@@ -96,7 +111,7 @@ export const projects: Project[] = [
     site: "https://snype.onrender.com/",
   },
   {
-    num: "04",
+    num: "05",
     title: "AI Resume Builder for Veterans",
     blurb: "Translates military roles into job-ready resumes.",
     details: [
@@ -110,7 +125,7 @@ export const projects: Project[] = [
     site: "https://studio--studio-5267126809-b917a.us-central1.hosted.app/",
   },
   {
-    num: "05",
+    num: "06",
     title: "College Real Estate Predictor",
     blurb: "ML model beating Zillow estimates for student rentals.",
     details: [
@@ -123,7 +138,7 @@ export const projects: Project[] = [
     github: "https://github.com/dominicdecarlo/collegerealestate", // ← replace with actual repo
   },
   {
-    num: "06",
+    num: "07",
     title: "AI Soccer Analysis System",
     blurb: "Computer vision pipeline for match analysis.",
     details: [
@@ -138,7 +153,7 @@ export const projects: Project[] = [
   },
 
   {
-    num: "07",
+    num: "08",
     title: "AI Affirmations Generator",
     blurb: "Generates personalized affirmations using AI.",
     details: [
@@ -153,7 +168,7 @@ export const projects: Project[] = [
   },
 
   {
-    num: "08",
+    num: "09",
     title: "Live Translator",
     blurb: "Real-time speech translation across languages.",
     details: [
