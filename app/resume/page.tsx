@@ -56,8 +56,8 @@ export default function ResumePage() {
               GitHub ↗
             </a>
             <a
-              href="Dom's_Resume.pdf"
-              download="Dom's_Resume.pdf"
+              href="/Dom_Resume.pdf"
+              download="Dom_Resume.pdf"
               className="text-accent hover:opacity-70"
             >
               Download PDF ↓
